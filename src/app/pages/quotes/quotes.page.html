@@ -1,0 +1,23 @@
+<ion-header *ngIf="!isLoading">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <app-backbutton color="light"></app-backbutton>
+    </ion-buttons>
+    <ion-title mode="ios" class="ion-text-center">{{strings.ST5}}</ion-title>
+
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+<app-loading *ngIf="isLoading"></app-loading>
+
+
+<ion-slides *ngIf="!isLoading" [options]="slideOpts" mode="ios">
+    <ion-slide class="slide" *ngFor="let quote of quotes">
+      <ion-card mode="ios" class="card">
+          <ion-text>&rdquo;</ion-text>
+        <h1>{{quote.quote_title}}</h1>
+      </ion-card>
+    </ion-slide>
+  </ion-slides>
+
+</ion-content>

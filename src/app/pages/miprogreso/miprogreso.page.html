@@ -1,0 +1,72 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-button (click)="backButton()" slot="start" mode="md" >
+      <ion-icon [color]="color" mode="md" name="arrow-back-outline"></ion-icon>
+    </ion-button>
+    <ion-title mode="ios" class="ion-text-center"
+      >Mi progreso dia {{this.day}}</ion-title
+    >
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <app-loading></app-loading>
+
+  <ion-content>
+    <ion-grid class="ion-no-padding">
+      <ion-row
+        class="header-bg"
+        [style.background-image]="'url(' + (config.Url + '/images/' + workout.workout_image) + ')'"
+        [ngStyle]="{'height': innerHeight}"
+      >
+        <div class="text">
+          <p class="name">{{workout.workout_title}}</p>
+          <p class="time">{{workout.workout_duration}} {{strings.ST95}}</p>
+        </div>
+      </ion-row>
+      <ion-row class="cols">
+        <ion-col size="12" class="ion-text-center">
+          <p class="text">Sube aquí tu progreso</p>
+        </ion-col>
+        
+      </ion-row>
+    </ion-grid>
+
+    <div class="progreso_temporal" >
+      <ion-grid class="ion-no-padding">
+      <ion-row class="header-bg">
+        <ion-spinner name="dots" *ngIf="procesando"></ion-spinner>
+        <img [src]="tempImg"  [ngStyle]="{'height': innerHeight} " *ngIf="tempImg">
+        <img [src]="config.Url + '/uploads/images/' + bdImg.url_imagen"  [ngStyle]="{'height': innerHeight} " *ngIf="bdImg && !tempImg">
+      </ion-row>
+      <ion-row class="cols">
+        <ion-col size="12" class="ion-text-center" >
+          <p class="text"><ion-button
+            (click)="presentActionSheet()"
+            class="primary ion-text-uppercase ion-text-bold ios button button-block button-solid ion-activatable ion-focusable hydrated"
+            mode="ios"
+            expand="block"
+            slot="fixed"
+          >
+            Abrir
+            <ion-icon slot="start" name="log-in-outline"></ion-icon>
+          </ion-button></p>
+        </ion-col>
+        <!-- <ion-col size="12" class="ion-text-center " *ngIf="tempImg || bdImg" *ngIf="!tempImg && !bdImg">
+          <p class="text" ><ion-button
+            (click)="eliminar_foto()"
+            class="primary ion-text-uppercase ion-text-bold ios button button-block button-solid ion-activatable ion-focusable hydrated"
+            mode="ios"
+            expand="block"
+          >
+            Eliminar
+            <ion-icon slot="start" name="trash-outline"></ion-icon>
+          </ion-button></p>
+        </ion-col>-->
+        
+      </ion-row>
+    </ion-grid>
+    </div>
+  
+
+
+

@@ -1,0 +1,17 @@
+<ion-header *ngIf="!isLoading">
+  <ion-toolbar color="primary">
+    <ion-title mode="ios">{{strings.ST9}}</ion-title>
+    <ion-buttons slot="start">
+      <app-backbutton color="light"></app-backbutton>
+  </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <app-loading *ngIf="isLoading"></app-loading>
+
+  <div *ngIf="!isLoading" [innerHTML]="aboutus"></div>
+
+</ion-content>

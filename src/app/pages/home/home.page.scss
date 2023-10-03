@@ -1,0 +1,20 @@
+.row-header-bg{
+  background-image: url('../../../assets/images/header.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.header-md:after{
+  display: none !important;
+}
+
+.menus ion-avatar { 
+  width: 60px;
+  height: 60px;
+  --border-radius: 0;
+  padding: 6px;
+}
+
+ion-item {
+  --ripple-color: transparent;
+}

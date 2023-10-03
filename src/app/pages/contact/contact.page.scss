@@ -1,0 +1,51 @@
+.header-bg{
+    background-image: url('../../../assets/images/profilebg.jpg');
+    background-position: center;
+    background-size: cover;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-bg .text{
+    color: #fff;
+    text-align: center;
+    padding: 0 45px;
+}
+
+.header-bg .title{
+    color: #fff;
+    text-align: center;
+    margin-bottom: 15px;
+    font-weight: bold;
+    font-size: 26px;
+}
+
+.header-bg .subtitle{
+    color: rgb(255 255 255 / 53%);
+    margin-top: 5px;
+    text-align: center;
+    font-size: 14px;
+}
+
+ion-icon {
+    font-size: 42px; //Preferred size here
+}
+
+ion-item{
+    --padding-start: 0;
+    --border-color: #e2e2e2;
+    --background-activated: white;
+    --background-focused: white;
+    --background-hover: white;
+    margin-bottom: 10px;
+}
+
+ion-label{
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+ion-button{
+    text-transform: uppercase;
+    margin-top: 20px;
+}

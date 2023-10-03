@@ -1,0 +1,66 @@
+<ion-header *ngIf="!isLoading" class="darkheader ion-no-border" mode="ios">
+  <ion-toolbar mode="ios">
+    <ion-buttons slot="start">
+      <app-backbutton color="light"></app-backbutton>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button fill="clear" (click)="logout()" slot="end">
+        <ion-icon mode="md" name="exit-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-no-padding">
+  <app-loading *ngIf="isLoading"></app-loading>
+
+  <ion-grid class="ion-no-padding">
+    <ion-row class="header-bg" [ngStyle]="{'height': innerHeight}">
+      <div class="text">
+        <p class="name">{{name}}</p>
+        <!-- <p class="since">{{strings.ST65}} {{since}}</p>-->
+      </div>
+    </ion-row>
+  </ion-grid>
+
+  <div class="ion-padding">
+    <div class="tags" (click)="toggleDiets()">
+      <h1>{{strings.ST3}}</h1>
+      <ion-icon
+        [name]="isDiets ? 'arrow-forward' : 'arrow-down'"
+        color="primary"
+        slot="end"
+      ></ion-icon>
+    </div>
+
+    <div class="animated fadeIn" [hidden]="isDiets">
+      <app-dietsfav></app-dietsfav>
+    </div>
+
+    <div class="tags" (click)="toggleWorkouts()">
+      <h1>{{strings.ST1}}</h1>
+      <ion-icon
+        [name]="isWorkouts ? 'arrow-forward' : 'arrow-down'"
+        color="primary"
+        slot="end"
+      ></ion-icon>
+    </div>
+
+    <div class="animated fadeIn" [hidden]="isWorkouts">
+      <app-workoutsfav></app-workoutsfav>
+    </div>
+
+    <div class="tags" (click)="togglePosts()">
+      <h1>{{strings.ST4}}</h1>
+      <ion-icon
+        [name]="isPosts ? 'arrow-forward' : 'arrow-down'"
+        color="primary"
+        slot="end"
+      ></ion-icon>
+    </div>
+
+    <div class="animated fadeIn" [hidden]="isPosts">
+      <app-postsfav></app-postsfav>
+    </div>
+  </div>
+</ion-content>

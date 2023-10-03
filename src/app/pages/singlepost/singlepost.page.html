@@ -1,0 +1,41 @@
+<ion-header *ngIf="!isLoading">
+  <ion-toolbar color="primary">
+    <ion-title mode="ios">{{post.post_title}}</ion-title>
+    <ion-buttons slot="start">
+      <app-backbutton color="light"></app-backbutton>
+  </ion-buttons>
+  <ion-buttons slot="end">
+          <ion-button (click)="addToFavorites()" slot="start">
+          <ion-icon color="light" mode="md" [name]="icon"></ion-icon>
+          </ion-button>
+  </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+<app-loading *ngIf="isLoading"></app-loading>
+
+<ion-content *ngIf="!isLoading" class="ion-no-padding">
+
+    <ion-grid class="ion-no-padding">
+        <ion-row class="header-bg" [style.background-image]="'url(' + (post.post_image | image) + ')'" [ngStyle]="{'height': innerHeight}">
+          <div class="text">
+          <p class="time">{{post.tag_title}}</p>
+          <p class="name">{{post.post_title}}</p>
+        </div>
+    </ion-row>
+    </ion-grid>
+
+      <div class="ion-padding">
+      <app-html [htmlcontent]="post.post_description"></app-html>
+      </div>
+
+  <div class="date-category">
+      <p><ion-icon name="calendar-outline"></ion-icon> {{post.post_date}}</p>
+      <p><ion-icon name="folder-open-outline"></ion-icon> {{post.tag_title}}</p>
+      <p (click)="showComments(post.post_id)"><ion-icon name="chatbubbles-outline"></ion-icon> <span color="primary">{{count}}</span></p>
+  </div>
+
+
+</ion-content>
+

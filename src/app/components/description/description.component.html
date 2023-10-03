@@ -1,0 +1,20 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="primary">
+      <ion-title mode="ios">
+        {{strings.ST112}}
+      </ion-title>
+            <ion-buttons slot="start">
+              <ion-button (click)="dismissModal()" slot="start">
+                <ion-icon color="light" name="close-outline"></ion-icon>
+              </ion-button>
+            </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="p-content">
+    <app-html [htmlcontent]="description"></app-html>
+  </div>
+
+</ion-content>

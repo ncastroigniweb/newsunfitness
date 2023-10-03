@@ -1,0 +1,28 @@
+<ion-header *ngIf="!isLoading">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <app-backbutton color="light"></app-backbutton>
+    </ion-buttons>
+    <ion-title mode="ios">{{strings.ST38}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <app-loading *ngIf="isLoading"></app-loading>
+
+  <ion-list>
+    <ion-item *ngFor="let item of equipments" [routerLink]="['/singleequipment', item.equipment_id, item.equipment_title]">
+      <ion-avatar slot="start">
+        <img src="{{item.equipment_image | image}}">
+      </ion-avatar>
+      <ion-label>
+        <h2>{{item.equipment_title}}</h2>
+      </ion-label>
+      <ion-button slot="end" fill="clear">
+        <ion-icon name="chevron-forward-outline"></ion-icon>
+      </ion-button>
+    </ion-item>
+    </ion-list>
+
+</ion-content>

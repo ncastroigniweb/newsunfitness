@@ -1,0 +1,104 @@
+.header-bg{
+    background-position: center;
+    background-size: cover;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 6px;
+  }
+  
+  .header-bg .text{
+    color: #fff;
+    text-align: center;
+    background: linear-gradient(to bottom, rgb(0 0 0 / 0%) 10%, rgba(0, 0, 0, 0.75) 90%);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 20px 30px;
+  }
+  
+  .header-bg .name{
+    color: #ffffff;
+    text-align: left;
+    margin: 0;
+    font-weight: bold;
+    font-size: 17px;
+    text-transform: capitalize;
+    margin-bottom: 6px;
+  }
+  
+  .header-bg .time{
+    color: var(--ion-color-primary);
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  .header-bg .subtitle{
+    color: #ffffff;
+    text-align: left;
+    opacity: 0.8;
+    margin: 0;
+    font-size: 16px;
+    text-transform: capitalize;
+  }
+  
+  .cardcategory{
+      width: 100%;
+      height: 120px;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      border-radius: 8px;
+    }
+    
+    .cardcategory .overlay{
+      background: -moz-linear-gradient(top,  rgba(0,0,0,0) 0%, rgba(0,0,0,0.75) 100%);
+      background: -webkit-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.75) 100%);
+      background: linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.75) 100%);
+      position: absolute;
+      width: 100%;
+      height: 120px;
+      justify-content: flex-end;
+      align-items: flex-start;
+      display: flex;
+      flex-flow: column;
+      text-align: left;
+      border-radius: 8px;
+    }
+    
+    .cardcategory .texts{
+      padding: 15px;
+      position: relative;
+      display: block;
+      width: 100%;
+    }
+    
+    .cardcategory .texts h1{
+      color: white;
+      margin: 0;
+      font-weight: bold;
+      font-size: 14px;
+      display: block;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .cardcategory .texts p{
+        color: white;
+        margin: 4px 0;
+        opacity: 0.7;
+        font-weight: bold;
+        font-size: 14px;
+        display: block;
+      }
+  
+  ion-label h2{
+    font-weight: bold;
+  }

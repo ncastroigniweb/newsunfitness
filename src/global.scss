@@ -1,0 +1,135 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import '~@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+//**  Custom Css  **//
+
+.item.sc-ion-label-md-h, .item .sc-ion-label-md-h{
+    color:#333333 !important;
+  }
+  
+  .ion-toast{
+    --border-radius: 8px !important;
+  }
+  
+  *:focus {
+    outline: none;
+  }
+
+  .center-modal .modal-wrapper {
+    height: auto;
+    position: absolute;
+    display: block;
+    width: 80%;
+    border-radius: 10px;
+    min-height: 28%;
+ }
+  
+  //**  Cards  **//
+  
+  .card-center-image{
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    border-radius: 10px;
+  }
+  
+  .card-center-bg{
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 15px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    height: 100%;
+  }
+  
+  .card-center-text{
+    color: white;
+    text-align: center;
+  }
+  
+  .card-center-text .title{
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+  }
+  
+  .card-center-text .subtitle{
+    color: var(--ion-color-primary);
+    text-transform: uppercase;
+    margin-top: 5px;
+    font-weight: bold;
+    font-size: 14px;
+  }
+  
+  //**  Header  **//
+  
+  .darkheader{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    background: linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(0,0,0,0.40) 90%);
+  }
+  
+  .darkheader ion-toolbar{
+    --background: transparent;
+    --ion-color-base: transparent !important;
+  }
+  
+  .darkheader ion-title{
+    color: white !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+  }
+  
+  .darkheader ion-icon{
+    color: white !important;
+  }
+  
+  .lightheader ion-title{
+    font-weight: 600 !important;
+  }
+
+ion-header::after {
+    background-image: none !important;
+    
+    }
+
+
+    ion-button{
+      --background-hover: transparent !important;
+      --ripple-color: transparent !important;
+      --background-activated: transparent !important;
+  }
+
+  ion-item{
+    --background-hover: white;
+  }

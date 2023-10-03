@@ -1,0 +1,13 @@
+ion-avatar { 
+    width: 70px;
+    height: 70px;
+}
+
+ion-item {
+    --ripple-color: transparent;
+}
+
+ion-item p{
+    color: var(--ion-color-primary);
+    margin: 0;
+}

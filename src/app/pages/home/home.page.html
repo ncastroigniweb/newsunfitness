@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-button (click)="openMenu()">
+        <ion-icon size="large" name="menu-outline"></ion-icon>
+    </ion-button>
+    </ion-buttons>
+    <ion-title mode="ios">{{strings.ST0}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-no-padding">
+
+  <div class="ion-justify-content-center ion-align-items-center row-header-bg" [ngStyle]="{'height': innerHeight}">
+  </div>
+
+  <ion-list class="menus">
+    <ion-item *ngFor="let item of homeMenu" mode="md" lines="none" [routerLink]="[item.url]">
+      <ion-avatar slot="start">
+        <img src="{{item.icon}}">
+      </ion-avatar>
+      <ion-label>
+        <h2>{{item.title}}</h2>
+        <p>{{item.subline}}</p>
+      </ion-label>
+      <ion-button slot="end" fill="clear">
+        <ion-icon name="chevron-forward-outline"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </ion-list>
+
+  <div style="height: 40px;"></div>
+
+</ion-content>

@@ -1,0 +1,42 @@
+<ion-header *ngIf="!isLoading">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <app-backbutton color="light"></app-backbutton>
+    </ion-buttons>
+    <ion-title class="ion-text-center" mode="ios">
+      {{strings.ST87}} {{day}}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+  <app-loading *ngIf="isLoading"></app-loading>
+
+<app-restday *ngIf="exercises.length === 0"></app-restday>
+
+<ion-list>
+  <ion-item *ngFor="let item of exercises" [routerLink]="['/singleexercise', item.exercise_id]">
+    <ion-avatar slot="start">
+      <img src="{{item.exercise_image | image}}">
+    </ion-avatar>
+    <ion-label>
+      <h2>{{item.exercise_title}}</h2>
+      <p>{{item.level_title}}</p>
+    </ion-label>
+    <ion-button slot="end" fill="clear">
+      <ion-icon name="chevron-forward-outline"></ion-icon>
+    </ion-button>
+  </ion-item>
+  </ion-list>
+
+<div style="height: 50px;"></div>
+
+</ion-content>
+
+<ion-footer mode="ios" no-border>
+  <ion-button (click)="mi_progreso()" class="primary ion-text-uppercase ion-text-bold" mode="ios" expand="block">
+    {{strings.ST117}}
+      <ion-icon slot="start" name="person-circle"></ion-icon>
+  </ion-button>
+</ion-footer>

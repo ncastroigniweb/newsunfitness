@@ -1,0 +1,30 @@
+<ion-header *ngIf="!isLoading">
+  <ion-toolbar color="primary">
+      <ion-title mode="ios">
+        {{strings.ST37}}
+      </ion-title>
+            <ion-buttons slot="start">
+              <app-backbutton color="light"></app-backbutton>
+            </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fixed>
+
+  <app-loading *ngIf="isLoading"></app-loading>
+
+  <ion-grid fixed>
+      <ion-row>
+        <ion-col *ngFor="let item of bodyparts" size="6" [routerLink]="['/singlebody', item.bodypart_id, item.bodypart_title]">
+          <div class="cardcategory" [style.background-image]="'url(' + (item.bodypart_image | image) + ')'">
+            <div class="overlay">
+            <div class="texts">
+            <h1>{{item.bodypart_title}}</h1>
+            </div>
+          </div>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+</ion-content>

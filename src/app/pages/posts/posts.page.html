@@ -1,0 +1,53 @@
+<ion-header *ngIf="!isLoading">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <app-backbutton color="light"></app-backbutton>
+    </ion-buttons>
+    <ion-title mode="ios" class="ion-text-center">{{strings.ST4}}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button [routerLink]="['/tags']">
+        <ion-icon name="search-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+<app-loading *ngIf="isLoading"></app-loading>
+
+<ion-content *ngIf="!isLoading" class="ion-no-padding">
+
+  <ion-slides [options]="slideOpts" mode="ios">
+    <ion-slide *ngFor="let item of featuredItems" [routerLink]="['/singlepost', item.post_id]">
+      <div class="header-bg" [style.background-image]="'url(' + (item.post_image | image) + ')'" [ngStyle]="{'height': innerHeight}">
+        <div class="text">
+          <p class="time">{{item.tag_title}}</p>
+          <p class="name">{{item.post_title}}</p>
+        </div>
+      </div>
+    </ion-slide>
+  </ion-slides>
+
+  <ion-item lines="none">
+    <ion-label>
+      <h2>{{strings.ST54}}</h2>
+    </ion-label>
+  </ion-item>
+
+<ion-grid>
+  <ion-row>
+    <ion-col size="6" *ngFor="let item of recentItems" [routerLink]="['/singlepost', item.post_id]">
+        <div class="cardcategory" [style.background-image]="'url(' + (item.post_image | image) + ')'">
+            <div class="overlay">
+            <div class="texts">
+            <h1>{{item.post_title}}</h1>
+            </div>
+          </div>
+          </div>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+  
+    <div style="height: 50px;"></div>
+
+</ion-content>

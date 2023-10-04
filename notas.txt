@@ -1,0 +1,7 @@
+Versiones
+Node 16.13.0
+Ionic CLI 6.20.9
+npm 8.1.0
+Angular CLI 11.2.19
+Cordova CLI 11.1.0
+Android SKD 26.1.1
